@@ -1,3 +1,7 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 body{
     background-color: wheat;
 }
@@ -7,4 +11,5 @@ body{
     flex-wrap: wrap;
     height: 300px;
     width: 400px;
+    // border: 1px solid gray;
 }
