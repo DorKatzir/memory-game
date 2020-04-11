@@ -64,6 +64,7 @@ var cardsWon = [];
 function createBoard(){
     for(let i=0; i < cardArray.length; i++){
         var card = document.createElement('img'); 
+            card.setAttribute('class', 'card');
             card.setAttribute('src', 'images/blank.png');
             card.setAttribute('data-id', i);
             card.addEventListener('click', flipCard);
@@ -86,6 +87,8 @@ function checkForMatch(){
         cards[optionOneId].setAttribute('src', 'images/blank.png');
         cards[optionTwoId].setAttribute('src', 'images/blank.png');
         console.log('Sorry, try again...');
+        cards[optionOneId].addEventListener('click', flipCard);
+        cards[optionTwoId].addEventListener('click', flipCard);
     }
     cardsChosen = [];
     cardsChosenId = [];
@@ -99,13 +102,18 @@ function checkForMatch(){
 
 // flip your card
 function flipCard(){
+    
     var cardId = this.getAttribute('data-id');
     cardsChosen.push(cardArray[cardId].name);
     cardsChosenId.push(cardId);
     this.setAttribute('src', cardArray[cardId].img);
+    
+
     if(cardsChosen.length === 2){
+        
         setTimeout(checkForMatch, 500);
     }
+    this.removeEventListener('click', flipCard);
 }
 
 createBoard();
