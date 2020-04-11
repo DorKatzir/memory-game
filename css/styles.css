@@ -1,10 +1,44 @@
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  height: 100vh;
   background-color: wheat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 410px;
+  padding-bottom: 1rem;
+}
+
+header h3 {
+  padding-left: 1rem;
 }
 
 .grid {
@@ -14,5 +48,10 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: 300px;
-  width: 400px;
+  width: 410px;
+}
+
+.card {
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
 }

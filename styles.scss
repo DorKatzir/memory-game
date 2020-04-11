@@ -1,15 +1,44 @@
 *, *::before, *::after{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
+    height: 100vh;
     background-color: wheat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 410px;
+    padding-bottom: 1rem;
+
+
+        h3 {      
+            // background-color: #fff;
+            padding-left: 1rem;
+            // span{
+            //     display: block;
+            //     width: 100%;                
+            // }   
+    }
 }
 
 .grid{
     display: flex;
     flex-wrap: wrap;
     height: 300px;
-    width: 400px;
+    width: 410px;
     // border: 1px solid gray;
+}
+.card {
+    border-radius: 5px;
+    border: 1px solid whitesmoke; 
 }
