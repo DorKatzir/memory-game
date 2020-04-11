@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+
 *, *::before, *::after{
     box-sizing: border-box;
     margin: 0;
@@ -6,39 +9,54 @@
 
 body{
     height: 100vh;
-    background-color: wheat;
+    background-color: silver;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 header {
+    grid-column: 1 / span 4;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    width: 410px;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
 
-
-        h3 {      
-            // background-color: #fff;
-            padding-left: 1rem;
-            // span{
-            //     display: block;
-            //     width: 100%;                
-            // }   
+    h2 {
+        font-weight: 400;
+        color: rgba(255,255,255, .8);
     }
+    h3{
+        font-weight: 500;
+        color: rgba(255,255,255, .9);
+    }
+
+
 }
 
 .grid{
-    display: flex;
-    flex-wrap: wrap;
-    height: 300px;
-    width: 410px;
-    // border: 1px solid gray;
-}
-.card {
-    border-radius: 5px;
-    border: 1px solid whitesmoke; 
+
+    display: grid;
+    grid-gap: .25rem;
+    grid-template-columns: auto auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    border: 3px solid rgba(255,255,255, .5);
+    border-radius: 10px;  
+
+
+    .card {
+        border-radius: 5px;  
+    }
+
+    /* On screens that are 480px or less */
+    @media screen and (max-width: 480px) {
+        grid-template-columns: auto auto auto;
+        padding: 8px;
+        header {
+            grid-column: 1 / span 3;
+        }}
 }
