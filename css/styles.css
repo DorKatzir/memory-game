@@ -27,9 +27,7 @@ body {
 }
 
 header {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-column: 1 / span 4;
+  width: 434px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,7 +37,13 @@ header {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding-bottom: .5rem;
+  padding: 1rem 1rem 0 1rem;
+  background-color: #2196f3;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 header h2 {
@@ -56,28 +60,67 @@ header h3 {
   display: -ms-grid;
   display: grid;
   grid-gap: .25rem;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
+  -ms-grid-rows: (100px)[3];
+  -ms-grid-columns: (minmax(100px, 100px))[4];
+      grid-template: repeat(3, 100px)/repeat(4, minmax(100px, 100px));
+  background-color: #2196f3;
+  padding: .5rem;
   border: 3px solid rgba(255, 255, 255, 0.5);
+  border-top: none;
   border-radius: 10px;
-  /* On screens that are 480px or less */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .grid .card {
   border-radius: 5px;
 }
 
+/* On screens that are 480px or less */
 @media screen and (max-width: 480px) {
   .grid {
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
-    padding: 8px;
+    -ms-grid-rows: (100px)[4];
+    -ms-grid-columns: (minmax(100px, 100px))[3];
+        grid-template: repeat(4, 100px)/repeat(3, minmax(100px, 100px));
   }
-  .grid header {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
-    grid-column: 1 / span 3;
+  header {
+    width: 330px;
   }
+}
+
+#msg-wrapper {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  width: 420px;
+  height: 420px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#msg-wrapper h2 {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 3rem;
+}
+
+#msg-wrapper span {
+  padding-top: .5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#msg-wrapper p {
+  padding-top: 3rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
 }
